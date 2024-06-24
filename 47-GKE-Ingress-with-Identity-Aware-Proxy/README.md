@@ -39,8 +39,8 @@ kubectl get nodes
 
 ```t
 # Make a note of Client ID and Client Secret
-Client ID: 420039265868-7dbrqnndhnqvnao5cogu5ef9i11burjq.apps.googleusercontent.com
-Client Secret: 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
+# Client ID: 420039265868-7dbrqnndhnqvnao5cogu5ef9i11burjq.apps.googleusercontent.com
+# Client Secret: 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
 
 # Template
 https://iap.googleapis.com/v1/oauth/clientIds/CLIENT_ID:handleRedirect
@@ -52,8 +52,8 @@ https://iap.googleapis.com/v1/oauth/clientIds/1057267725005-0icbqnab9rsvodgmq7di
 ## Step-04: Creating a Kubernetes Secret
 ```t
 # Make a note of Client ID and Client Secret
-Client ID: 1057267725005-0icbqnab9rsvodgmq7dicfvs1f56sj5p.apps.googleusercontent.com
-Client Secret: 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
+# Client ID: 1057267725005-0icbqnab9rsvodgmq7dicfvs1f56sj5p.apps.googleusercontent.com
+# Client Secret: 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
 
 # List Kubernetes Secrets (Default Namespace)
 kubectl get secrets
@@ -63,8 +63,8 @@ kubectl create secret generic my-secret --from-literal=client_id=client_id_key \
     --from-literal=client_secret=client_secret_key
 
 # Replace  client_id_key, client_secret_key
-kubectl create secret generic my-secret --from-literal=client_id=1057267725005-0icbqnab9rsvodgmq7dicfvs1f56sj5p.apps.googleusercontent.com \
-    --from-literal=client_secret=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
+# kubectl create secret generic my-secret --from-literal=client_id=1057267725005-0icbqnab9rsvodgmq7dicfvs1f56sj5p.apps.googleusercontent.com \
+#     --from-literal=client_secret=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
 
 # List Kubernetes Secrets (Default Namespace)
 kubectl get secrets
