@@ -11,4 +11,4 @@ spec:
     sampleRate: 1.0
   sessionAffinity:
     affinityType: "CLIENT_IP"  # Disable at Step-07
-    #affinityType: ""          # Enable at Step-07
+    # affinityType: ""          # Enable at Step-07

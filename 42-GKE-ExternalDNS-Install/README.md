@@ -35,7 +35,7 @@ GSA_NAME: the name of the new IAM service account.
 GSA_PROJECT: the project ID of the Google Cloud project for your IAM service account.
 
 # Replace GSA_NAME and GSA_PROJECT
-gcloud iam service-accounts create external-dns-gsa --project=kdaida123
+gcloud iam service-accounts create external-dns-gsa --project=aksgkelearning
 
 # List IAM Service Accounts
 gcloud iam service-accounts list
@@ -53,9 +53,13 @@ GSA_PROJECT: the project ID of the Google Cloud project of your IAM service acco
 ROLE_NAME: the IAM role to assign to your service account, like roles/spanner.viewer.
 
 # Replace PROJECT_ID, GSA_NAME, GSA_PROJECT, ROLE_NAME
-gcloud projects add-iam-policy-binding kdaida123 \
-    --member "serviceAccount:external-dns-gsa@kdaida123.iam.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding aksgkelearning \
+    --member "serviceAccount:external-dns-gsa@aksgkelearning.iam.gserviceaccount.com" \
     --role "roles/dns.admin" 
+```
+gcloud projects add-iam-policy-binding aksgkelearning \
+    --member "serviceAccount:external-dns-gsa@aksgkelearning.iam.gserviceaccount.com" \
+    --role "roles/iam.serviceAccountTokenCreator" 
 ```
 
 ## Step-05: Create Kubernetes Namepsace and Kubernetes Service Account
@@ -85,9 +89,9 @@ gcloud iam service-accounts add-iam-policy-binding GSA_NAME@GSA_PROJECT.iam.gser
     --member "serviceAccount:PROJECT_ID.svc.id.goog[NAMESPACE/KSA_NAME]"
 
 # Replace GSA_NAME, GSA_PROJECT, PROJECT_ID, NAMESPACE, KSA_NAME
-gcloud iam service-accounts add-iam-policy-binding external-dns-gsa@kdaida123.iam.gserviceaccount.com \
+gcloud iam service-accounts add-iam-policy-binding external-dns-gsa@aksgkelearning.iam.gserviceaccount.com \
     --role roles/iam.workloadIdentityUser \
-    --member "serviceAccount:kdaida123.svc.id.goog[external-dns-ns/external-dns-ksa]"
+    --member "serviceAccount:aksgkelearning.svc.id.goog[external-dns-ns/external-dns-ksa]"
 ```
 
 ## Step-07: Annotate Kubernetes Service Account with GCP IAM SA email Address
@@ -101,7 +105,7 @@ kubectl annotate serviceaccount KSA_NAME \
 # Replace KSA_NAME, NAMESPACE, GSA_NAME, GSA_PROJECT
 kubectl annotate serviceaccount external-dns-ksa \
     --namespace external-dns-ns \
-    iam.gke.io/gcp-service-account=external-dns-gsa@kdaida123.iam.gserviceaccount.com
+    iam.gke.io/gcp-service-account=external-dns-gsa@aksgkelearning.iam.gserviceaccount.com
 
 # Describe Kubernetes Service Account
 kubectl -n external-dns-ns describe sa external-dns-ksa 
@@ -201,10 +205,12 @@ helm upgrade --install external-dns external-dns/external-dns \
     --set txt-owner-id=k8s \
     --set serviceAccount.create=false \
     --set serviceAccount.name=external-dns-ksa \
+    --set domain-filter=umuezebo.org \
     -n external-dns-ns
     
 # Optional Setting (Important Note: will make ExternalDNS see only the Cloud DNS zones matching provided domain, omit to process all available Cloud DNS zones)
 --set domain-filter=kalyanreddydaida.com \
+--set provider=google \
 ```
 
 ## Step-12: Verify external-dns deployment

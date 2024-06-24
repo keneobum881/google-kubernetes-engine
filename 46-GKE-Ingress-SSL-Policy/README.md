@@ -29,7 +29,7 @@ gcloud compute ssl-policies list
 
 # Create an SSL policy with a Google-managed profile
 gcloud compute ssl-policies create SSL_POLICY_NAME \
-    --profile COMPATIBLE | MODERN | RESTRICTED   \
+    --profile COMPATIBLE | MODERN | RESTRICTED \
     --min-tls-version 1.0 | 1.1 | 1.2
 
 # Replace Values  

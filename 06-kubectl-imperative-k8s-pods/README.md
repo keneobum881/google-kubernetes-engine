@@ -30,6 +30,7 @@ kubectl run <desired-pod-name> --image <Container-Image>
 
 # Replace Pod Name, Container Image
 kubectl run my-first-pod --image stacksimplify/kubenginx:1.0.0
+kubectl run my-first-pod --image stacksimplify/kubenginx:1.0.0 --dry-run=client
 ```  
 
 ### Step-02-03: List Pods

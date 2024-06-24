@@ -71,12 +71,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-basics
-  annotations:
-    # If the class annotation is not specified it defaults to "gce".
-    # gce: external load balancer
-    # gce-internal: internal load balancer
-    kubernetes.io/ingress.class: "gce"  
+  # annotations:
+  #   # If the class annotation is not specified it defaults to "gce".
+  #   # gce: external load balancer
+  #   # gce-internal: internal load balancer
+  #   kubernetes.io/ingress.class: "gce"  
 spec:
+  ingressClassName: "gce"
   defaultBackend:
     service:
       name: app3-nginx-nodeport-service

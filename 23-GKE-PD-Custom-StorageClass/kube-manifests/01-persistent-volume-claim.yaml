@@ -9,7 +9,7 @@ spec:
   resources: 
     requests:
       storage: 4Gi # Commment at Step-09
-      #storage: 8Gi # UnCommment at Step-09
+      # storage: 8Gi # UnCommment at Step-09
       
 # NEED FOR PVC
 # 1. Dynamic volume provisioning allows storage volumes to be created 

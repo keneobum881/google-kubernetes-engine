@@ -41,7 +41,7 @@ cd SSL-SelfSigned-Certs
 openssl genrsa -out app1-ingress.key 2048
 
 # Create your app1 certificate signing request:
-openssl req -new -key app1-ingress.key -out app1-ingress.csr -subj "/CN=app1.kalyanreddydaida.com"
+openssl req -new -key app1-ingress.key -out app1-ingress.csr -subj "/CN=app1.umuezebo.org"
 
 # Create your app1 certificate:
 openssl x509 -req -days 7300 -in app1-ingress.csr -signkey app1-ingress.key -out app1-ingress.crt
@@ -63,7 +63,7 @@ cd SSL-SelfSigned-Certs
 openssl genrsa -out app2-ingress.key 2048
 
 # Create your app2 certificate signing request:
-openssl req -new -key app2-ingress.key -out app2-ingress.csr -subj "/CN=app2.kalyanreddydaida.com"
+openssl req -new -key app2-ingress.key -out app2-ingress.csr -subj "/CN=app2.umuezebo.org"
 
 # Create your app2 certificate:
 openssl x509 -req -days 7300 -in app2-ingress.csr -signkey app2-ingress.key -out app2-ingress.crt
@@ -84,7 +84,7 @@ cd SSL-SelfSigned-Certs
 openssl genrsa -out app3-ingress.key 2048
 
 # Create your app3 certificate signing request:
-openssl req -new -key app3-ingress.key -out app3-ingress.csr -subj "/CN=app3-default.kalyanreddydaida.com"
+openssl req -new -key app3-ingress.key -out app3-ingress.csr -subj "/CN=app3-default.umuezebo.org"
 
 # Create your app3 certificate:
 openssl x509 -req -days 7300 -in app3-ingress.csr -signkey app3-ingress.key -out app3-ingress.crt

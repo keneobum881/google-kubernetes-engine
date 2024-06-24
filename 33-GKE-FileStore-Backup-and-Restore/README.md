@@ -249,7 +249,7 @@ exit
 
 # myapp1 POD2 - Connect to Kubernetes Pod
 kubectl exec --stdin --tty <POD-NAME> -- /bin/sh
-kubectl exec --stdin --tty myapp2-deployment-6dccd6557-mbbjm  -- /bin/sh
+kubectl exec --stdin --tty myapp2-deployment-54fbf4767f-kjhbz  -- /bin/sh
 cd /usr/share/nginx/html/filestore
 ls
 tail -f myapp1.txt

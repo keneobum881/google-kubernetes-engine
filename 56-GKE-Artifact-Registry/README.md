@@ -100,10 +100,10 @@ docker tag myapp1:v1 <LOCATION>-docker.pkg.dev/<GOOGLE-PROJECT-ID>/<GOOGLE-ARTIF
 # - GOOGLE-ARTIFACT-REGISTRY-NAME, 
 # - IMAGE-NAME, 
 # - IMAGE-TAG
-docker tag myapp1:v1 us-central1-docker.pkg.dev/kdaida123/gke-artifact-repo1/myapp1:v1
+docker tag myapp1:v1 us-central1-docker.pkg.dev/aksgkelearning/gke-artifact-repo1/myapp1:v1
 
 # Push the Docker Image to Google Artifact Registry
-docker push us-central1-docker.pkg.dev/kdaida123/gke-artifact-repo1/myapp1:v1
+docker push us-central1-docker.pkg.dev/aksgkelearning/gke-artifact-repo1/myapp1:v1
 ```
 
 ## Step-08: Verify the Docker Image on Google Artifact Registry
