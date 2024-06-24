@@ -75,7 +75,7 @@ KEY_TYPE: rsa, ecdsa, ed25519
 USER_EMAIL: dkalyanreddy@gmail.com 
 
 # Replace Values KEY_TYPE, USER_EMAIL
-ssh-keygen -t ed25519 -C "dkalyanreddy@gmail.com"
+ssh-keygen -t ed25519 -C "akabuezeokenechukwu@gmail.com"
 Provide the File Name as "id_gcp_cloud_source"
 
 ## Sample Output
